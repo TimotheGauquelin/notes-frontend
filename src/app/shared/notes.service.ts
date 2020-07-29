@@ -31,13 +31,13 @@ export class NotesService {
     return index;
   }
 
-  update(id:number, title: string, body: string) {
+  update(id: number, title: string, body: string) {
     let note = this.notes[id];
     note.title = title;
     note.body = body;
   }
 
-  delete(id:number) {
+  delete(id: number) {
     this.notes.splice(id, 1);
   }
 
