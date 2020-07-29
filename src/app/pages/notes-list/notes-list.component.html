@@ -3,7 +3,7 @@
   <div class="search-bar-container">
     <div class="field">
       <p class="control has-icons-left">
-        <input #filterInput class="input" type="text"  placeholder="Filtre">
+        <input #filterInput class="input" type="text"  placeholder="Filtre" (change)="filter($event.target.value)">
         <span class="icon is-small is-left">
           <i class="fas fa-search"></i>
         </span>
@@ -15,7 +15,7 @@
   <div class="notes-list">
 
     <app-note-card 
-        *ngFor="let note of notes; index as i"
+        *ngFor="let note of filteredNotes; index as i"
         [link]="i"
         (delete)="deleteNote(i)"
         [title]="note.title" 
